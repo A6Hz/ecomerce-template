@@ -35,7 +35,7 @@ class SideBar extends Component {
       >
         <a href="#" className="sidebar-overlay" onClick={this.toggleNav} />
         <nav>
-          <div onClick={this.closeNav}>
+          <div onClick={this.toggleNav}>
             <div className="sidebar-back text-left">
               <i className="fa fa-angle-left pr-2" aria-hidden="true" /> Back
             </div>
