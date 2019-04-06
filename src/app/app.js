@@ -8,10 +8,10 @@ import { withRouter } from 'react-router';
 import { establishCurrentUser } from '../modules/auth';
 import { isServer } from '../store';
 
-import Header from './header';
+import Header from './components/common/header/index';
+import Footer from './components/common/footer/index';
 import Routes from './routes';
 
-import './app.css';
 
 class App extends Component {
   componentWillMount() {
@@ -30,6 +30,7 @@ class App extends Component {
         <div id="content">
           <Routes />
         </div>
+        <Footer></Footer>
       </div>
     );
   }
