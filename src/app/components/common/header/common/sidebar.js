@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./index.scss";
+import "./sidebar.css";
+
 class SideBar extends Component {
   constructor(props) {
     super(props);
@@ -60,15 +62,27 @@ class SideBar extends Component {
                 onMouseEnter={() => {
                   this.toggleMenu("clothing");
                 }}
+                className={
+                  this.state.clothing
+                    ? "has-submenu highlighted"
+                    : "has-submenu "
+                }
               >
                 clothing
+                <span className="sub-arrow" />
               </a>
               <ul
                 className={
                   this.state.clothing
-                    ? "mega-menu clothing-menu open-menu"
+                    ? "mega-menu clothing-menu open-menu menu-fullpage"
                     : "mega-menu clothing-menu"
                 }
+                onMouseLeave={() => {
+                  this.toggleMenu("clothing");
+                }}
+                onMouseEnter={() => {
+                  this.toggleMenu("clothing");
+                }}
               >
                 <li>
                   <div className="row m-0">
@@ -156,8 +170,34 @@ class SideBar extends Component {
               </ul>
             </li>
             <li>
-              <a href="#">bags</a>
-              <ul>
+              <a
+                href="#"
+                onMouseLeave={() => {
+                  this.toggleMenu("bags");
+                }}
+                onMouseEnter={() => {
+                  this.toggleMenu("bags");
+                }}
+                className={
+                  this.state.bags ? "has-submenu highlighted" : "has-submenu "
+                }
+              >
+                bags
+                <span className="sub-arrow" />
+              </a>
+              <ul
+                className={
+                  this.state.bags
+                    ? "mega-menu bags-menu open-menu menu-fullpage-bags"
+                    : "mega-menu bags-menu"
+                }
+                onMouseLeave={() => {
+                  this.toggleMenu("bags");
+                }}
+                onMouseEnter={() => {
+                  this.toggleMenu("bags");
+                }}
+              >
                 <li>
                   <a href="#">shopper bags</a>
                 </li>
@@ -169,148 +209,8 @@ class SideBar extends Component {
                 </li>
                 <li>
                   <a href="#">purses</a>
-                  <ul>
-                    <li>
-                      <a href="#">purses</a>
-                    </li>
-                    <li>
-                      <a href="#">wallets</a>
-                    </li>
-                    <li>
-                      <a href="#">leathers</a>
-                    </li>
-                    <li>
-                      <a href="#">satchels</a>
-                    </li>
-                  </ul>
                 </li>
               </ul>
-            </li>
-            <li>
-              <a href="#">footwear</a>
-              <ul>
-                <li>
-                  <a href="#">sport shoes</a>
-                </li>
-                <li>
-                  <a href="#">formal shoes</a>
-                </li>
-                <li>
-                  <a href="#">casual shoes</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">watches</a>
-            </li>
-            <li>
-              <a href="#">Accessories</a>
-              <ul>
-                <li>
-                  <a href="#">fashion jewellery</a>
-                </li>
-                <li>
-                  <a href="#">caps and hats</a>
-                </li>
-                <li>
-                  <a href="#">precious jewellery</a>
-                </li>
-                <li>
-                  <a href="#">more..</a>
-                  <ul>
-                    <li>
-                      <a href="#">necklaces</a>
-                    </li>
-                    <li>
-                      <a href="#">earrings</a>
-                    </li>
-                    <li>
-                      <a href="#">wrist wear</a>
-                    </li>
-                    <li>
-                      <a href="#">accessories</a>
-                      <ul>
-                        <li>
-                          <a href="#">ties</a>
-                        </li>
-                        <li>
-                          <a href="#">cufflinks</a>
-                        </li>
-                        <li>
-                          <a href="#">pockets squares</a>
-                        </li>
-                        <li>
-                          <a href="#">helmets</a>
-                        </li>
-                        <li>
-                          <a href="#">scarves</a>
-                        </li>
-                        <li>
-                          <a href="#">more...</a>
-                          <ul>
-                            <li>
-                              <a href="#">accessory gift sets</a>
-                            </li>
-                            <li>
-                              <a href="#">travel accessories</a>
-                            </li>
-                            <li>
-                              <a href="#">phone cases</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="#">belts & more</a>
-                    </li>
-                    <li>
-                      <a href="#">wearable</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">house of design</a>
-            </li>
-
-            <li>
-              <a href="#">beauty & personal care</a>
-              <ul>
-                <li>
-                  <a href="#">makeup</a>
-                </li>
-                <li>
-                  <a href="#">skincare</a>
-                </li>
-                <li>
-                  <a href="#">premium beaty</a>
-                </li>
-                <li>
-                  <a href="#">more</a>
-                  <ul>
-                    <li>
-                      <a href="#">fragrances</a>
-                    </li>
-                    <li>
-                      <a href="#">luxury beauty</a>
-                    </li>
-                    <li>
-                      <a href="#">hair care</a>
-                    </li>
-                    <li>
-                      <a href="#">tools & brushes</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">home & decor</a>
-            </li>
-            <li>
-              <a href="#">kitchen</a>
             </li>
           </ul>
         </nav>
