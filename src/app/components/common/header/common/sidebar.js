@@ -1,24 +1,33 @@
 import React, { Component } from "react";
-
+import "./index.scss";
 class SideBar extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      openSide: false
+      openSide: false,
+      clothing: false,
+      bags: false,
+      footwear: false,
+      accesories: false,
+      beauty: false
     };
     this.toggleNav = this.toggleNav.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   componentWillMount() {}
-
+  toggleMenu(opt) {
+    this.setState(state => ({
+      ...state,
+      [opt]: !state[opt]
+    }));
+  }
   toggleNav() {
     this.setState(state => ({
+      ...state,
       openSide: !state.openSide
     }));
-    /*var closemyslide = document.getElementById("mySidenav");
-        if(closemyslide)
-            closemyslide.classList.remove('open-side');*/
   }
 
   render() {
@@ -43,8 +52,24 @@ class SideBar extends Component {
           {/*Vertical Menu*/}
           <ul id="sub-menu" className="sm pixelstrap sm-vertical ">
             <li>
-              <a href="#">clothing</a>
-              <ul className="mega-menu clothing-menu">
+              <a
+                href="#"
+                onMouseLeave={() => {
+                  this.toggleMenu("clothing");
+                }}
+                onMouseEnter={() => {
+                  this.toggleMenu("clothing");
+                }}
+              >
+                clothing
+              </a>
+              <ul
+                className={
+                  this.state.clothing
+                    ? "mega-menu clothing-menu open-menu"
+                    : "mega-menu clothing-menu"
+                }
+              >
                 <li>
                   <div className="row m-0">
                     <div className="col-xl-4">
