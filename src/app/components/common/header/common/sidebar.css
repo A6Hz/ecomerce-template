@@ -1,0 +1,22 @@
+@media (min-width: 1200px) {
+  .menu-fullpage {
+    display: none;
+    top: auto;
+    left: 0px;
+    margin-left: 300px !important;
+    margin-top: -53px !important;
+    min-width: 10em !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .menu-fullpage-bags {
+    display: none;
+    top: auto;
+    left: 0px;
+    margin-left: 300px !important;
+    margin-top: -53px !important;
+    min-width: 10em !important;
+    max-width: 20em !important;
+  }
+}
