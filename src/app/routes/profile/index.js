@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { frontloadConnect } from 'react-frontload';
-import Page from '../../components/page';
+import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { frontloadConnect } from "react-frontload";
+import Page from "../../components/page";
+import Loader from "../../components/common/loader/index";
 
 import {
   getCurrentProfile,
   removeCurrentProfile
-} from '../../../modules/profile';
+} from "../../../modules/profile";
 
 const frontload = async props =>
   await props.getCurrentProfile(+props.match.params.id);
@@ -35,20 +36,22 @@ class Profile extends Component {
         description={`This is user profile number ${id}`}
         image={image}
       >
+        {this.props.loaded ? null : <Loader />}
         <p>
           <b>Name:</b> {name}
         </p>
         <p>
           <b>ID:</b> {id}
         </p>
-        <img src={image} alt={name} style={{ width: '400px' }} />
+        <img src={image} alt={name} style={{ width: "400px" }} />
       </Page>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  currentProfile: state.profile.currentProfile
+  currentProfile: state.profile.currentProfile,
+  loaded: state.profile.loaded
 });
 
 const mapDispatchToProps = dispatch =>
