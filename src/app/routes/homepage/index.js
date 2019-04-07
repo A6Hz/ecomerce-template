@@ -3,6 +3,9 @@ import Page from "../../components/page";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import "../../components/common/index.scss";
+import BlogSection from "./blog";
+import TopCollection from "./collection";
+import Instagram from "./instagram";
 var svgFreeShipping =
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -117 679.99892 679">\n' +
   "                                        <path\n" +
@@ -180,7 +183,7 @@ export default () => (
         </div>
       </div>
     </section>
-    {/**top collection */}
+    <TopCollection />
     {/*Parallax banner*/}
     <section className="p-0">
       <div className="full-banner parallax-banner1 parallax text-center p-left">
@@ -233,9 +236,8 @@ export default () => (
       </section>
     </div>
     {/*special products*/}
-    {/*<BlogSection /> */}
-
-    {/** <Instagram /> */}
+    <BlogSection />
+    <Instagram />
 
     {/*logo section*/}
     <section className="section-b-space">
