@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import Helmet from "react-helmet";
-import logo from "../../assets/dm.png";
+import logo from "../../assets/dm.jpeg";
 
 const SITE_URL =
   process.env.NODE_ENV === "development"
@@ -12,7 +12,7 @@ const FACEBOOK_APP_ID = "XXXXXXXXX";
 
 const defaultTitle = "My Website";
 const defaultDescription =
-  "This is a really awesome website where we can render on the server. Supa cool.";
+  "This is a really awesome website where we can render on the server. Test.";
 const defaultImage = `${SITE_URL}${logo}`;
 const defaultTwitter = "@cereallarceny";
 const defaultSep = " | ";
