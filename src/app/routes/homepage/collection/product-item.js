@@ -17,31 +17,31 @@ class ProductItem extends Component {
   onClickHandle(img) {
     this.setState({ image: img });
   }
-  onOpenModal = () => {
+  onOpenModal() {
     this.setState({ open: true });
-  };
+  }
 
-  onCloseModal = () => {
+  onCloseModal() {
     this.setState({ open: false });
-  };
+  }
 
-  minusQty = () => {
+  minusQty() {
     if (this.state.quantity > 1) {
       this.setState({ stock: "InStock" });
       this.setState({ quantity: this.state.quantity - 1 });
     }
-  };
+  }
 
-  plusQty = () => {
+  plusQty() {
     if (this.props.product.stock >= this.state.quantity) {
       this.setState({ quantity: this.state.quantity + 1 });
     } else {
       this.setState({ stock: "Out of Stock !" });
     }
-  };
-  changeQty = e => {
+  }
+  changeQty(e) {
     this.setState({ quantity: parseInt(e.target.value) });
-  };
+  }
 
   render() {
     const {
