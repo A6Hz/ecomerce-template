@@ -6,7 +6,7 @@ import logo from "../../assets/dm.jpg";
 const SITE_URL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3000"
-    : "https://ecomerce-dm.herokuapp.com";
+    : "https://ecomercedemo-dm.herokuapp.com";
 
 const FACEBOOK_APP_ID = "XXXXXXXXX";
 
