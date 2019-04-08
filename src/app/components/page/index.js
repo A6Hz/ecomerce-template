@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import Helmet from "react-helmet";
-import logo from "../../assets/dm.jpeg";
+import logo from "../../assets/dm.jpg";
 
 const SITE_URL =
   process.env.NODE_ENV === "development"
