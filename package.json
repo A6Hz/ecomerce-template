@@ -40,7 +40,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serve": "cross-env NODE_ENV=production node ./server/index.js",
-    "postinstall": "npm build"
+    "postinstall": "yarn build"
   },
   "browserslist": [
     ">0.2%",
